@@ -34,6 +34,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     
     @IBAction func onBackButtonPressed(sender: AnyObject) {
+        enterMultiple.text = ""
         mainTitle.hidden = false
         enterMultiple.hidden = false
         playButton.hidden = false
