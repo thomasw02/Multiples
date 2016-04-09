@@ -24,13 +24,25 @@ class ViewController: UIViewController {
     }
     var multiple: Int = 0
     var total: Int = 0
+    var howManyTimes = 0
     
     @IBOutlet weak var mainTitle: UIImageView!
     @IBOutlet weak var enterMultiple: UITextField!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var addingLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     
+    @IBAction func onBackButtonPressed(sender: AnyObject) {
+        mainTitle.hidden = false
+        enterMultiple.hidden = false
+        playButton.hidden = false
+        addButton.hidden = true
+        addingLabel.hidden = true
+        backButton.hidden = true
+        total = 0
+        howManyTimes = 0
+    }
     @IBAction func buttonPressed(sender: UIButton) {
         if enterMultiple.text != nil && enterMultiple.text != "" {
             mainTitle.hidden = true
@@ -38,7 +50,9 @@ class ViewController: UIViewController {
             playButton.hidden = true
             addButton.hidden = false
             addingLabel.hidden = false
+            backButton.hidden = false
             total = 0
+            howManyTimes = 0
             multiple = Int(enterMultiple.text!)!
             updateLabel()
             
@@ -46,8 +60,14 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func addPressed(sender: UIButton) {
+        total = total+multiple
+        updateLabel()
+    }
     func updateLabel() {
-        addingLabel.text = "\(total) + \(multiple) = \(total+multiple)"
+        howManyTimes++
+        total = howManyTimes * multiple
+        addingLabel.text = "\(howManyTimes) x \(multiple) = \(total)"
     }
     
 } 
