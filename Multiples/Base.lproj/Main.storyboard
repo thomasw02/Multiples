@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="width" secondItem="sSj-Yx-7C9" secondAttribute="height" multiplier="15:8" id="gKb-XQ-ycq"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter multiple here" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nG4-yy-hch">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Which Multiple?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nG4-yy-hch">
                                 <rect key="frame" x="220" y="285" width="161" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nG4-yy-hch" secondAttribute="height" multiplier="161:30" id="L4P-bw-AMI"/>
@@ -42,14 +42,20 @@
                                     <constraint firstAttribute="width" secondItem="Ji9-uQ-dpm" secondAttribute="height" multiplier="225:208" id="b1f-Qz-3ds"/>
                                 </constraints>
                                 <state key="normal" image="play"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="drC-LI-yzq"/>
+                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zK3-ey-vOm">
                                 <rect key="frame" x="195" y="425" width="211" height="101"/>
                                 <state key="normal" image="add"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1F-cP-wtr">
-                                <rect key="frame" x="279" y="176" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1F-cP-wtr" userLabel="Adding Label">
+                                <rect key="frame" x="193" y="154" width="215" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="f1F-cP-wtr" secondAttribute="height" multiplier="215:56" id="UWa-py-UcU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -62,12 +68,13 @@
                             <constraint firstItem="zK3-ey-vOm" firstAttribute="trailing" secondItem="Ji9-uQ-dpm" secondAttribute="trailing" id="Cdd-tA-dlX"/>
                             <constraint firstItem="nG4-yy-hch" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F4z-Ti-gkT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nG4-yy-hch" secondAttribute="trailing" constant="20" id="HKb-ls-vm4"/>
-                            <constraint firstItem="nG4-yy-hch" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="MhV-Dp-BQ4"/>
                             <constraint firstItem="Ji9-uQ-dpm" firstAttribute="top" secondItem="nG4-yy-hch" secondAttribute="bottom" constant="57" id="N1H-nA-Rdo"/>
+                            <constraint firstItem="f1F-cP-wtr" firstAttribute="centerX" secondItem="sSj-Yx-7C9" secondAttribute="centerX" id="OOl-JU-kaM"/>
                             <constraint firstItem="Ji9-uQ-dpm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WjY-ZH-ddp"/>
                             <constraint firstItem="zK3-ey-vOm" firstAttribute="leading" secondItem="Ji9-uQ-dpm" secondAttribute="leading" id="ZBa-gd-Sj5"/>
                             <constraint firstItem="zK3-ey-vOm" firstAttribute="centerX" secondItem="Ji9-uQ-dpm" secondAttribute="centerX" id="ag1-kj-d6a"/>
                             <constraint firstItem="sSj-Yx-7C9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="byj-Nd-nbY"/>
+                            <constraint firstItem="nG4-yy-hch" firstAttribute="top" secondItem="f1F-cP-wtr" secondAttribute="bottom" constant="75" id="gR9-mM-qop"/>
                             <constraint firstItem="x2J-xt-QUy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iNX-lF-yI3"/>
                             <constraint firstItem="nG4-yy-hch" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="imZ-Z1-pT9"/>
                             <constraint firstItem="sSj-Yx-7C9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iy9-Pg-8Aq"/>
@@ -76,16 +83,16 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addButton" destination="zK3-ey-vOm" id="XCD-kx-2ab"/>
-                        <outlet property="enterMultiple" destination="nG4-yy-hch" id="mrh-Ur-2AW"/>
-                        <outlet property="mainTitle" destination="sSj-Yx-7C9" id="jOk-YC-54s"/>
-                        <outlet property="playButton" destination="Ji9-uQ-dpm" id="WGF-5F-puF"/>
-                        <outlet property="title" destination="sSj-Yx-7C9" id="QCs-pm-ALF"/>
+                        <outlet property="addButton" destination="zK3-ey-vOm" id="s4E-QK-Iq4"/>
+                        <outlet property="addingLabel" destination="f1F-cP-wtr" id="DzP-ij-dZV"/>
+                        <outlet property="enterMultiple" destination="nG4-yy-hch" id="mHC-jz-7xo"/>
+                        <outlet property="mainTitle" destination="sSj-Yx-7C9" id="upP-W4-9FB"/>
+                        <outlet property="playButton" destination="Ji9-uQ-dpm" id="UgF-vu-0s9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="565" y="490"/>
+            <point key="canvasLocation" x="341" y="499"/>
         </scene>
     </scenes>
     <resources>
